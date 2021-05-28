@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +37,40 @@
   to {
     transform: rotate(360deg);
   }
+}
+.conta{
+  width: 95%;
+  margin-right: auto;
+  margin-left: auto;
+max-width: 2000px;
+}
+.mx-15{
+  margin-right: 15px;
+  margin-left: 15px;
+}
+.green{
+  color: rgb(0, 158, 127);
+}
+
+.anchor{
+  text-decoration: none;
+  
+}
+.mr-25{
+  margin-right: 25px;
+}
+
+.select-active{
+  border-color: rgb(0, 158, 127) !important;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.sidebarFixed{
+position: fixed;
+left:0;
+top: 0;
+width: 300px !important;
 }
