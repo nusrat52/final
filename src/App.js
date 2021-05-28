@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route , Switch} from "react-router-dom";
 import { categoryTaker, productTaker, sebetInitialize, logged, ownProductTaker, getProfile, orderTaker } from "./actions/actions";
 import Nav from "./components/nav/navbar";
 import Product from "./components/profil/product";
@@ -73,6 +73,7 @@ const [sidebarOn, setSidebarOn] = useState(false);
 // console.log(stringToHTML(cataloqlar[7]?.icon_svg),"parse elediyim yer");
   return (
     <Router>
+         {/* <Switch> */}
       <Route exact path="/">
         {/* <div id="divv"></div> */}
         <Main sidebarOn={sidebarOn} setSidebarOn={setSidebarOn} />
@@ -99,7 +100,8 @@ const [sidebarOn, setSidebarOn] = useState(false);
 
       <Route path="/profile/category">
         <Category  />
-      </Route>
+        </Route>
+        {/* </Switch> */}
     </Router>
   );
 }
