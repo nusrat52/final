@@ -73,7 +73,7 @@ const [sidebarOn, setSidebarOn] = useState(false);
 // console.log(stringToHTML(cataloqlar[7]?.icon_svg),"parse elediyim yer");
   return (
     <Router>
-         {/* <Switch> */}
+         <Switch>
       <Route exact path="/">
         {/* <div id="divv"></div> */}
         <Main sidebarOn={sidebarOn} setSidebarOn={setSidebarOn} />
@@ -101,7 +101,7 @@ const [sidebarOn, setSidebarOn] = useState(false);
       <Route path="/profile/category">
         <Category  />
         </Route>
-        {/* </Switch> */}
+        </Switch>
     </Router>
   );
 }
