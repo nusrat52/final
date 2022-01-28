@@ -16,7 +16,7 @@ export const signIn = (data) => {
   console.log(data);
   return (dispatch) => {
     axios
-      .post("http://34.67.46.157/accounts/api/login/", {
+      .post("http://34.125.144.115/accounts/api/login/", {
         username: data.email,
         password: data.password,
       })
@@ -44,7 +44,7 @@ export const signIn = (data) => {
 export const categoryTaker = () => {
   return (dispatch) => {
     axios
-      .get("http://34.67.46.157/api/categories/")
+      .get("http://34.125.144.115/api/categories/")
       .then((response) => {
         if (response.statusText === "OK") {
           dispatch({
@@ -59,7 +59,7 @@ export const categoryTaker = () => {
 export const productTaker = (data = 1) => {
   return (dispatch) => {
     axios
-      .get(`http://34.67.46.157/api/products/?page=${data}`, {})
+      .get(`http://34.125.144.115/api/products/?page=${data}`, {})
       .then((response) => {
         console.log(response, "productlari grt eden action");
         let done = false;
@@ -83,7 +83,7 @@ export const productTaker = (data = 1) => {
 export const ownProductTaker = () => {
   return (dispatch) => {
     axios
-      .get("http://34.67.46.157/api/own-products/", {
+      .get("http://34.125.144.115/api/own-products/", {
         headers: {
           // 'Content-Type': 'application/json',
           Authorization: "Token " + localStorage.getItem("token"),
@@ -114,7 +114,7 @@ export const producSubmit = (data) => {
   formdata.append("main_image", data.img);
 
   return (dispatch) => {
-    fetch("http://34.67.46.157/api/products/", {
+    fetch("http://34.125.144.115/api/products/", {
       method: "POST", // or 'PUT'
       headers: {
         Authorization: "Token " + localStorage.getItem("token"),
@@ -149,7 +149,7 @@ export const producUpdate = (data) => {
     console.log("beraberdi");
   }
   return (dispatch) => {
-    fetch(`http://34.67.46.157/api/products/${data.id}/`, {
+    fetch(`http://34.125.144.115/api/products/${data.id}/`, {
       method: "PUT", // or 'PUT'
       headers: {
         Authorization: "Token " + localStorage.getItem("token"),
@@ -174,7 +174,7 @@ export const producDelete = (data) => {
   console.log(data, "product delete");
 
   return (dispatch) => {
-    fetch(`http://34.67.46.157/api/products/${data.id}/`, {
+    fetch(`http://34.125.144.115/api/products/${data.id}/`, {
       method: "DELETE",
       headers: {
         Authorization: "Token " + localStorage.getItem("token"),
@@ -252,7 +252,7 @@ export const buy = (data) => {
     };
   }
   // return (dispatch) => {
-  fetch("http://34.67.46.157/api/orders/", {
+  fetch("http://34.125.144.115/api/orders/", {
     method: "POST",
     headers: {
       Authorization: "Token " + localStorage.getItem("token"),
@@ -287,7 +287,7 @@ export const signUpdate = (data) => {
   formData.append("image", data.sekil);
   formData.append("password", data.password);
   return (dispatch) => {
-    fetch("http://34.67.46.157/accounts/api/user-profile/", {
+    fetch("http://34.125.144.115/accounts/api/user-profile/", {
       method: "PUT", // or 'PUT'
       headers: {
         Authorization: "Token " + localStorage.getItem("token"),
@@ -308,7 +308,7 @@ export const signUpdate = (data) => {
 
 export const getProfile = () => {
   return (dispatch) => {
-    fetch("http://34.67.46.157/accounts/api/user-profile/", {
+    fetch("http://34.125.144.115/accounts/api/user-profile/", {
       method: "GET", // or 'PUT'
       headers: {
         Authorization: "Token " + localStorage.getItem("token"),
@@ -331,7 +331,7 @@ export const getProfile = () => {
 export const orderTaker = (data = 1) => {
   return (dispatch) => {
     axios
-      .get(`http://34.67.46.157/api/orders/`, {
+      .get(`http://34.125.144.115/api/orders/`, {
         method: "GET", // or 'PUT'
         headers: {
           Authorization: "Token " + localStorage.getItem("token"),
@@ -364,7 +364,7 @@ export const addCategory = (data) => {
     formdata.append("icon_svg", data.firstName);
     formdata.append("icon_png", data.sekil);
 
-    fetch("http://34.67.46.157/api/categories/", {
+    fetch("http://34.125.144.115/api/categories/", {
       method: "POST", // or 'PUT'
       headers: {
         Authorization: "Token " + localStorage.getItem("token"),
@@ -389,7 +389,7 @@ export const addCategory = (data) => {
 //   // console.log(data.sekil.name);
 //   return (dispatch) => {
 //     axios
-//       .post("http://34.67.46.157/accounts/api/register/", {
+//       .post("http://34.125.144.115/accounts/api/register/", {
 //         username: data.username,
 //         email: data.email,
 //         password: data.password,
@@ -415,12 +415,13 @@ export const signUp = (data) => {
     if (typeof data.sekil == "object") {
       formdata.append("image", data.sekil);
     }
-    fetch("http://34.67.46.157/accounts/api/register/", {
+    fetch("http://34.125.144.115/accounts/api/register/", {
       method: "POST",
 
       body: formdata,
     })
       .then((response) => {
+        console.log(response);
         if (response.ok) {
           dispatch({
             type: "SIGNUPSUCCES",

@@ -73,7 +73,7 @@ const [sidebarOn, setSidebarOn] = useState(false);
 // console.log(stringToHTML(cataloqlar[7]?.icon_svg),"parse elediyim yer");
   return (
     <Router>
-      <Route exact path="/final">
+      <Route exact path="/">
         {/* <div id="divv"></div> */}
         <Main sidebarOn={sidebarOn} setSidebarOn={setSidebarOn} />
         {/* <input type="file" onChange={(e) => { setsekil(e.currentTarget.files[0]) }} />

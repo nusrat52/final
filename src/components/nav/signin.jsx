@@ -15,7 +15,7 @@ import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { useFormik } from "formik";
 import * as Yup from "yup";
- import { signUp, signIn,  } from "../../actions/actions";
+import { signUp, signIn,  } from "../../actions/actions";
 
 
 function Copyright() {
